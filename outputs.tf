@@ -1,3 +1,7 @@
+output "iotcentral_applications_id" {
+  description = "Map of id values across all iotcentral_applications, keyed the same as var.iotcentral_applications"
+  value       = { for k, v in azurerm_iotcentral_application.iotcentral_applications : k => v.id }
+}
 output "iotcentral_applications_display_name" {
   description = "Map of display_name values across all iotcentral_applications, keyed the same as var.iotcentral_applications"
   value       = { for k, v in azurerm_iotcentral_application.iotcentral_applications : k => v.display_name }
