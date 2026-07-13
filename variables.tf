@@ -22,10 +22,10 @@ EOT
     resource_group_name           = string
     sub_domain                    = string
     display_name                  = optional(string)
-    public_network_access_enabled = optional(bool)   # Default: true
-    sku                           = optional(string) # Default: "ST1"
+    public_network_access_enabled = optional(bool)
+    sku                           = optional(string)
     tags                          = optional(map(string))
-    template                      = optional(string) # Default: "iotc-pnp-preview@1.0.0"
+    template                      = optional(string)
     identity = optional(object({
       type = string
     }))
