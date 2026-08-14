@@ -8,7 +8,7 @@ output "iotcentral_applications_display_name" {
 }
 output "iotcentral_applications_identity" {
   description = "Map of identity values across all iotcentral_applications, keyed the same as var.iotcentral_applications"
-  value       = { for k, v in azurerm_iotcentral_application.iotcentral_applications : k => v.identity if v.identity != null && length(v.identity) > 0 }
+  value       = { for k, v in azurerm_iotcentral_application.iotcentral_applications : k => one(v.identity) if v.identity != null && length(v.identity) > 0 }
 }
 output "iotcentral_applications_location" {
   description = "Map of location values across all iotcentral_applications, keyed the same as var.iotcentral_applications"
